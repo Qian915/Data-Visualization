@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Minimal InfoVis Environment</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    </head>
+    <body>
+        <h1>Minimal InfoVis Environment</h1>
+        <div id="menu"></div>
+        <div id="content"></div>
+        
+        <script>
+d3.select("#menu")
+        .append("button")
+        .text("Download")
+        .attr("title", "Download the content-svg seen below")
+        .on("click", e => {
+          const name = "content.svg";
+          let svg_text = d3.select("svg")
+            .attr("title", name)
+            .attr("version", 1.1)
+            .attr("xmlns", "http://www.w3.org/2000/svg")
+            .node().parentNode.innerHTML;
+    
+          let a = d3.select("body")
+            .append("a")
+            .attr("href", "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg_text))
+            .attr("download", name);
+          a.node().click();
+          a.remove();
+        });
+        </script>
+        <script src="./main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to SVG</title>
+    <link rel='stylesheet' href='styles.css'>
+  </head>
+  <body>
+    <h1>Simple SVG graphics</h1>
+    <svg width='520' height='300'>
+      <g transform="scale(1.2)">
+        <circle cx="50" cy="50" r="20"></circle>
+        <rect x="80" y="30" width="50" height="40"></rect>
+        <g transform='translate(0,50)'>
+          <circle cx="50" cy="50" r="20" fill="red"></circle>
+          <rect x="80" y="30" width="50" height="40" fill="#83cc2a"></rect>
+        </g>
+  
+        <g transform="translate(0, 100)" fill="#adf6ff" stroke="black">
+          <circle cx="50" cy="50" r="20" stroke-width="5"></circle>
+          <rect x="80" y="30" width="50" height="40"></rect>
+        </g>
+  
+        <g class="lines" transform="translate(150, 30)">
+          <line x1="0" y1="0" x2="50" y2="140" stroke='magenta'></line> # line with 2 points
+          <path fill="none" d="M50 140 L100 15 L150 180"></path> # Move to (50,140), Line to (100,15)
+          <path fill="none" d="M50 140 L100 15 L150 180"></path>
+        </g>
+        <g transform='translate(320,30)'>
+          <path fill='none' d='M0 50 Q 50 0 100 50' stroke='blue' stroke-width='3'></path> # Move to(0,50), Quardatic 2 points
+        </g>
+        <g transform='translate(320,100)'>
+          <path fill='none' d='M0 50 C 30 0, 66 0, 100 50'  stroke='saddlebrown' stroke-width='3'></path> # Cubic 3 points
+        </g>
+      </g>
+    </svg>
+  </body>
+</html>

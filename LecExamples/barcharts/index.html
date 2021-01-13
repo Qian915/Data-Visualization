@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to D3: Bar Charts</title>
+    <!-- <link rel='stylesheet' href='styles.css'> -->
+    <!-- <script src='https://unpkg.com/d3@6.2.0/dist/d3.min.js'></script> -->
+    <script src='https://unpkg.com/d3@5.13.1/dist/d3.min.js'></script>
+  </head>
+  <body>
+    <h1>D3 Bar Chart</h1>
+    <form>
+      <div id="D3BarChart-Menu">
+        <label for="d3-barchart" style="font-family: sans-serif; font-size: 1.1em">Choose a dataset:</label>
+      </div>
+    </form>
+    <div id='D3BarChart'></div>
+    <hr>
+  </body>
+  <script src="./index.js"></script>
+  <script>
+      // init
+      renderAll.run('fau-studis')
+      // event handler
+      const runBarChart = e => {
+          const val = document.getElementById('barchart-select').value
+          //console.log(val)
+          renderAll.run()
+      }
+  </script>
+</html>

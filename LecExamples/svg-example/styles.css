@@ -1,0 +1,10 @@
+.lines {
+  stroke: black;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.lines path {
+  stroke: #25656d;
+  stroke-linejoin: round;
+}
